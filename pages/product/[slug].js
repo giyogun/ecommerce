@@ -23,14 +23,14 @@ const ProductDetails = ({ product, products }) => {
         <div>
           <div className="image-container">
             <img
-              src={urlFor(image && image[index])}
+              src={urlFor(image && image[index]).url()}
               className="product-detail-image"
             />
           </div>
           <div className="small-images-container">
             {image?.map((img, i) => (
               <img
-                src={urlFor(img)}
+                src={urlFor(img).url()}
                 className={
                   i === index ? "small-image selected-image" : "small-image"
                 }
@@ -58,7 +58,10 @@ const ProductDetails = ({ product, products }) => {
           <div className="quantity">
             <h3>Quantity:</h3>
             <p className="quantity-desc">
-              <span className="minus" onClick={() => setAmount(amount <= 0 ? 0 : amount - 1)}>
+              <span
+                className="minus"
+                onClick={() => setAmount(amount <= 0 ? 0 : amount - 1)}
+              >
                 <AiOutlineMinus />
               </span>
               <span className="num">{amount}</span>
