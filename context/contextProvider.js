@@ -1,4 +1,5 @@
 import React, { useReducer, useState } from "react";
+import toast from "react-hot-toast";
 import AppContext from "./appContext";
 
 const reducerFn = (state, action) => {
@@ -37,6 +38,7 @@ const reducerFn = (state, action) => {
       newItems = state.items.concat(action.payload);
     }
     console.log(totAmt);
+    toast.success(`${action.payload.qty} ${action.payload.qty === 1 ? 'item' : 'items'} successfully added to cart`);
 
     return {
       items: newItems,
@@ -56,12 +58,13 @@ const reducerFn = (state, action) => {
 
     if (updatedItem.qty <= 0) {
       updatedItem.qty = 0;
-      newList = state.items.filter(item => item !== existingItem);
+      newList = state.items.filter((item) => item !== existingItem);
     } else {
       newList = [...state.items];
       newList[index] = updatedItem;
     }
-    newAmount = state.totalAmount <= 0 ? 0 : state.totalAmount - existingItem.price;
+    newAmount =
+      state.totalAmount <= 0 ? 0 : state.totalAmount - existingItem.price;
 
     return {
       items: newList,
@@ -77,7 +80,6 @@ const initialState = { items: [], totalAmount: 0 };
 const ContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducerFn, initialState);
   const [cartIsShown, setCartIsShown] = useState(false);
-
 
   const addToCartHandler = (product) => {
     dispatch({ type: "INCLUDE", payload: product });
