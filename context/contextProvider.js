@@ -37,8 +37,11 @@ const reducerFn = (state, action) => {
     } else {
       newItems = state.items.concat(action.payload);
     }
-    console.log(totAmt);
-    toast.success(`${action.payload.qty} ${action.payload.qty === 1 ? 'item' : 'items'} successfully added to cart`);
+    toast.success(
+      `${action.payload.qty} ${
+        action.payload.qty === 1 ? "item" : "items"
+      } successfully added to cart`
+    );
 
     return {
       items: newItems,
@@ -72,6 +75,13 @@ const reducerFn = (state, action) => {
     };
   }
 
+  if (action.type === "RESET") {
+    return {
+      items: [],
+      totalAmount: 0,
+    };
+  }
+
   return state;
 };
 
@@ -83,7 +93,6 @@ const ContextProvider = ({ children }) => {
 
   const addToCartHandler = (product) => {
     dispatch({ type: "INCLUDE", payload: product });
-    console.log(product);
   };
   const removeFromCartHandler = (id) => {
     dispatch({ type: "REMOVE", payload: id });
@@ -93,10 +102,15 @@ const ContextProvider = ({ children }) => {
     setCartIsShown(!cartIsShown);
   };
 
+  const resetState = () => {
+    dispatch({ type: "RESET" });
+  };
+
   const value = {
     items: state.items,
     totalAmount: state.totalAmount,
     showCart: cartIsShown,
+    defaultState: resetState,
     setShowCart: cartShowHandler,
     addProduct: addToCartHandler,
     removeProduct: removeFromCartHandler,

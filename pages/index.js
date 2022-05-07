@@ -1,14 +1,10 @@
-import React, { useContext } from "react";
-import { client, urlFor } from "../lib/client";
+import React from "react";
+import { client } from "../lib/client";
 import FooterBanner from "../components/FooterBanner";
 import HeroBanner from "../components/HeroBanner";
 import Product from "../components/Product";
-import AppContext from "../context/appContext";
-import CartModal from "../components/CartModal";
 
 const Home = ({ products, banner }) => {
-  const ctx = useContext(AppContext);
-
   return (
     <>
       <HeroBanner heroBanner={banner.length && banner[0]} />
@@ -23,7 +19,7 @@ const Home = ({ products, banner }) => {
           <Product key={product._id} product={product} />
         ))}
       </div>
-      
+
       <FooterBanner footerBanner={banner && banner[0]} />
     </>
   );

@@ -19,7 +19,9 @@ const Navbar = () => {
         }}
       >
         <AiOutlineShopping />
-        <span className="cart-item-qty">{ctx.items.length}</span>
+        <span className="cart-item-qty">
+          {ctx.items?.length > 0 ? ctx.items?.length : 0}
+        </span>
       </button>
     </div>
   );

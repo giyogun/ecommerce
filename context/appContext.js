@@ -4,6 +4,7 @@ const AppContext = React.createContext({
   items: [],
   totalAmount: 0,
   showCart: false,
+  defaultState: () => {},
   setShowCart: () => {},
   addQty: () => {},
   reduceQty: () => {},

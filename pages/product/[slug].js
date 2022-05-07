@@ -7,21 +7,27 @@ import {
 } from "react-icons/ai";
 import Product from "../../components/Product";
 import AppContext from "../../context/appContext";
-import { urlFor, client } from "../../lib/client";
+import { client, urlFor } from "../../lib/client";
 
 const ProductDetails = ({ product, products }) => {
   const [index, setIndex] = useState(0);
   const [amount, setAmount] = useState(0);
   const ctx = useContext(AppContext);
-  const { addProduct, addQty, reduceQty, quantity } = ctx;
+  const { addProduct, setShowCart } = ctx;
   const { image, name, details, price } = product;
   const qty = amount === 0 ? 1 : amount;
+  console.log(product);
+
+  const checkoutHandler = () => {
+    addProduct({ ...product, qty });
+    setShowCart();
+  };
 
   return (
     <div>
       <div className="product-detail-container">
         <div>
-          <div className="image-container">
+          <div>
             <img
               src={urlFor(image && image[index]).url()}
               className="product-detail-image"
@@ -77,7 +83,9 @@ const ProductDetails = ({ product, products }) => {
             >
               Add to Cart
             </button>
-            <button className="buy-now">Buy Now</button>
+            <button className="buy-now" onClick={checkoutHandler}>
+              Buy Now
+            </button>
           </div>
         </div>
       </div>
