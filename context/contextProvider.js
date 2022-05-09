@@ -37,11 +37,6 @@ const reducerFn = (state, action) => {
     } else {
       newItems = state.items.concat(action.payload);
     }
-    toast.success(
-      `${action.payload.qty} ${
-        action.payload.qty === 1 ? "item" : "items"
-      } successfully added to cart`, { id: 'itemAdd'}
-    );
 
     return {
       items: newItems,

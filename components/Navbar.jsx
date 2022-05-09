@@ -15,7 +15,6 @@ const Navbar = () => {
         className="cart-icon"
         onClick={() => {
           ctx.setShowCart();
-          console.log(ctx.showCart);
         }}
       >
         <AiOutlineShopping />

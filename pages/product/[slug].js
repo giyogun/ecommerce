@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import toast from "react-hot-toast";
 import {
   AiFillStar,
   AiOutlineMinus,
@@ -78,7 +79,15 @@ const ProductDetails = ({ product, products }) => {
           <div className="buttons">
             <button
               className="add-to-cart"
-              onClick={() => addProduct({ ...product, qty })}
+              onClick={() => {
+                addProduct({ ...product, qty });
+                toast.success(
+                  `${qty} ${
+                    qty === 1 ? "item" : "items"
+                  } successfully added to cart`,
+                  { id: "itemAdd" }
+                );
+              }}
             >
               Add to Cart
             </button>
