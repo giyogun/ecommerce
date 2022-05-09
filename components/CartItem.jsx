@@ -10,7 +10,7 @@ const CartItem = ({ product }) => {
 
   return (
     <li className="cart-item">
-      <div className="tryout">
+      <div className="cart-item-details">
         <img src={urlFor(image[0]).url()} />
         <div className="summary">
           <h4>{name}</h4>

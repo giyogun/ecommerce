@@ -139,7 +139,7 @@ span.text-red {
   background-color: #dcdcdc;
   border-radius: 15px;
   position: relative;
-  height: 500px;
+  height: 600px;
   line-height: 0.9;
   width: 100%;
 }
@@ -165,7 +165,7 @@ span.text-red {
 }
 .hero-banner-container h1 {
   color: white;
-  font-size: 10em;
+  font-size: 7.8em;
   margin-left: -20px;
   text-transform: uppercase;
 }
@@ -173,8 +173,9 @@ span.text-red {
   position: absolute;
   top: 0%;
   right: 20%;
-  width: 450px;
-  height: 450px;
+  /* width: 550px; */
+  /* height: 400px; */
+  object-fit: cover;
 }
 
 .desc {
@@ -252,6 +253,9 @@ span.text-red {
   left: 8%; */
   top: -25%;
   left: 25%;
+  /* height: 500px;
+  width: 650px; */
+  object-fit: cover;
 }
 .banner-desc .right {
   line-height: 1.4;
@@ -421,6 +425,7 @@ span.text-red {
 .product-detail-image {
   border-radius: 15px;
   background-color: #ebebeb;
+  object-fit: cover;
 
   width: 400px;
   height: 400px;
@@ -614,7 +619,19 @@ span.text-red {
   margin-top: 10px;
 }
 
-@media screen and (max-width: 500px) {
+
+@media screen and (max-width: 900px) {
+  .hero-banner-container {
+    height: 600px;
+  }
+  .hero-banner-image {
+    width: 90%;
+    height: 90%;
+    top: -2%;
+    right: -6%;
+  }
+}
+@media screen and (max-width: 600px) {
   .hero-banner-container {
     height: 560px;
   }
@@ -629,10 +646,10 @@ span.text-red {
     margin-top: 80px;
   }
   .footer-banner-image {
-    width: 77%;
+    width: 76%;
     left: 30%;
-    top: 6%;
-    height: 56%;
+    top: 16%;
+    height: 50%;
   }
   .banner-desc .left h3 {
     font-weight: 900;
@@ -755,157 +772,23 @@ span.text-red {
     margin: auto;
   }
 }
-@media screen and (max-width: 800px) {
-  .hero-banner-container {
-    height: 500px;
+
+@media screen and (max-width: 375px) {
+  .footer-banner-container {
+    height: 600px;
+    margin-top: 80px;
   }
   .hero-banner-image {
-    /* width: 77%; */
-    /* height: 62%; */
-    top: -2%;
+    width: 90%;
+    height: 300px;
+    top: 2%;
+    /* top: 90px; */
     right: -6%;
   }
-  .footer-banner-container {
-    height: 400px;
-    margin-top: 100px;
-  }
+
   .footer-banner-image {
-    /* width: 89%; */
-    top: -16%;
-    left: 15%;
-    /* height: 88%; */
-  }
-  .banner-desc .left h3 {
-    font-weight: 900;
-    font-size: 50px;
-    margin-left: 5px;
-  }
-  .banner-desc .left p {
-    margin: 18px;
-  }
-  .banner-desc .right h3 {
-    font-size: 45px;
-  }
-  .banner-desc .right p {
-    font-size: 18px;
-  }
-  .banner-desc .right .company-desc {
-    font-size: 14px;
-  }
-  .banner-desc {
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-  .hero-banner-container {
-    line-height: 1.3;
-  }
-  .hero-banner-container h1 {
-    font-size: 100px;
-  }
-  .hero-banner-container h3 {
-    font-size: 40px;
-  }
-  .hero-banner-container button {
-    margin-top: 90px;
-    z-index: 10000;
-  }
-  .desc {
-    bottom: 60px;
-  }
-  .product-detail-container {
-    flex-wrap: wrap;
-  }
-  .product-detail-container .product-detail-image {
-    width: 250px;
-    height: 250px;
-  }
-
-  .small-image {
-    border-radius: 8px;
-    background-color: #ebebeb;
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
-  }
-
-  .product-detail-desc h1 {
-    font-size: 20px;
-  }
-  .cart-container {
-    width: 415px;
-    padding: 4px;
-  }
-  .cart-heading {
-    margin-top: 35px;
-  }
-  .product-container {
-    margin-top: 10px;
-  }
-  .product {
-    padding: 20px 5px;
-  }
-  .product .cart-product-image {
-    width: 25%;
-    height: 25%;
-  }
-  .buttons .add-to-cart {
-    width: 150px;
-  }
-  .buttons .buy-now {
-    width: 150px;
-  }
-  .product-detail-container {
-    margin: 20px;
-  }
-
-  .item-desc .flex {
-    width: 200px;
-  }
-  .top {
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-  .item-desc .bottom {
-    margin-top: 30px;
-  }
-  .flex h5 {
-    font-size: 16px;
-    color: #324d67;
-  }
-  .flex h4 {
-    font-size: 16px;
-    color: black;
-  }
-  .cart-bottom {
-    padding: 30px;
-  }
-
-  .total h3 {
-    font-size: 20px;
-  }
-  .track {
-    animation: marquee 10s linear infinite;
-    width: 550%;
-  }
-  .success-wrapper,
-  .cancel-wrapper {
-    min-height: 69vh;
-  }
-  .success,
-  .cancel {
-    width: 470px;
-    margin-top: 100px;
-    padding: 20px;
-  }
-  .success {
-    height: 350px;
-  }
-  .success h2 {
-    font-size: 17px;
-  }
-  .btn-container {
-    width: 300px;
-    margin: auto;
+    width: 70%;
+    height: 40%;
   }
 }
 
@@ -1061,6 +944,7 @@ hr {
   justify-content: space-between;
   align-items: flex-start;
   flex-direction: column;
+  padding: 0 10px;
   /* margin-left: -140px;
   margin-top: 30px; */
 }
@@ -1118,14 +1002,89 @@ hr {
   color: white;
 }
 
-.tryout {
+.cart-item-details {
   display: flex;
   flex-direction: row;
   /* width: 50%; */
 }
 
-.tryout img {
+.cart-item-details img {
   width: 100px;
   height: 100px;
+  border-radius: 10px;
   /* flex: 1; */
+}
+
+
+.pay-form {
+  margin: 3rem auto;
+  width: 95%;
+  max-width: 25rem;
+  border-radius: 6px;
+  background-color: #38015c;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  text-align: center;
+}
+
+.pay-form h1 {
+  text-align: center;
+  color: white;
+}
+
+.control {
+  margin-bottom: 0.5rem;
+}
+
+.control label {
+  display: block;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.control input {
+  font: inherit;
+  background-color: #f1e1fc;
+  color: #38015c;
+  border-radius: 4px;
+  border: 1px solid white;
+  width: 100%;
+  text-align: left;
+  padding: 0.25rem;
+}
+
+.form-actions {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-actions button {
+  cursor: pointer;
+  font: inherit;
+  color: white;
+  background-color: #9f5ccc;
+  border: 1px solid #9f5ccc;
+  border-radius: 4px;
+  padding: 0.5rem 2.5rem;
+}
+
+.form-actions button:hover {
+  background-color: #873abb;
+  border-color: #873abb;
+}
+
+.form-actions .toggle {
+  margin-top: 1rem;
+  background-color: transparent;
+  color: #9f5ccc;
+  border: none;
+  padding: 0.15rem 1.5rem;
+}
+
+.form-actions .toggle:hover {
+  background-color: transparent;
+  color: #ae82cc;
 }

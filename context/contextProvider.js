@@ -40,7 +40,7 @@ const reducerFn = (state, action) => {
     toast.success(
       `${action.payload.qty} ${
         action.payload.qty === 1 ? "item" : "items"
-      } successfully added to cart`
+      } successfully added to cart`, { id: 'itemAdd'}
     );
 
     return {

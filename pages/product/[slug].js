@@ -16,7 +16,6 @@ const ProductDetails = ({ product, products }) => {
   const { addProduct, setShowCart } = ctx;
   const { image, name, details, price } = product;
   const qty = amount === 0 ? 1 : amount;
-  console.log(product);
 
   const checkoutHandler = () => {
     addProduct({ ...product, qty });
