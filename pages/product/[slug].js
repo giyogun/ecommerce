@@ -50,13 +50,13 @@ const ProductDetails = ({ product, products }) => {
           <h1>{name}</h1>
           <div className="reviews">
             <div>
-              <AiFillStar />
-              <AiFillStar />
-              <AiFillStar />
-              <AiFillStar />
+              <AiOutlineStar />
+              <AiOutlineStar />
+              <AiOutlineStar />
+              <AiOutlineStar />
               <AiOutlineStar />
             </div>
-            <p>(20)</p>
+            <p>(0)</p>
           </div>
           <h4>Details:</h4>
           <p>{details}</p>
